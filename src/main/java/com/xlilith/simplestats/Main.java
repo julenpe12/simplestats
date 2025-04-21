@@ -37,7 +37,7 @@ public class Main extends JavaPlugin {
         getLogger().info(" |_____/|_|_| |_| |_| .__/|_|\\___|_____/ \\__\\__,_|\\__|___/");
         getLogger().info("                    | |                                   ");
         getLogger().info("                    |_|                                   ");
-        getLogger().info(" Made by: xLilith99_                                     Version: 1.0.1");
+        getLogger().info(" Made by: xLilith99_ and fred                               Version: 1.0.1");
         getLogger().info("");
         getLogger().info("Registrando placeholders de SimpleStats...");
     }
@@ -145,6 +145,10 @@ class StatsPlaceholder extends PlaceholderExpansion {
         
         if (identifier.equals("animals_bred")) {
             return String.valueOf(plugin.getStatsConfig().getInt("animals_bred." + player.getUniqueId().toString(), 0));
+        }
+
+        if (identifier.equals("potions_brewed")) {
+            return String.valueOf(plugin.getStatsConfig().getInt("player_potions." + player.getUniqueId().toString(), 0));
         }
 
         if (identifier.startsWith("topkills_name_") || identifier.startsWith("topkills_kills_")) {
